@@ -1,0 +1,7 @@
+{
+  "name": "SlickTrack Maritime ML Dashboard",
+  "description": "Minimalist real-time maritime pollution telemetry dashboard and SAR ML pipeline with vessel inspection, offline caching, and official case reports.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

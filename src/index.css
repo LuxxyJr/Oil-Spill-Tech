@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Newsreader', Georgia, serif;
+    --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Digital Herbarium Palette Tokens - Pure Light Theme (from design system) */
+    /* Primary #9A3C4E */
+    --color-primary: #9A3C4E;
+    --color-primary-hover: #832E3F;
+    --color-primary-container: #F8E2E5;
+    --color-on-primary: #FFFFFF;
+    --color-primary-accent: #C45F72;
+
+    /* Secondary #566153 */
+    --color-secondary: #566153;
+    --color-secondary-container: #E2E8E0;
+    --color-secondary-hover: #465044;
+    --color-on-secondary: #FFFFFF;
+
+    /* Tertiary #7C5051 */
+    --color-tertiary: #7C5051;
+    --color-tertiary-container: #F3E6E6;
+    --color-on-tertiary: #FFFFFF;
+
+    /* Neutral #54463A & Canvas / Cards */
+    --color-neutral: #54463A;
+    --color-on-surface: #382E26;
+    --color-on-surface-variant: #54463A;
+    --color-outline: #887467;
+    --color-outline-variant: #DCCEC4;
+    
+    /* Surface backgrounds (Warm Light Editorial Cream matching the design) */
+    --color-surface: #F9EFE7;
+    --color-surface-dim: #EEDFD5;
+    --color-surface-bright: #FFFDFC;
+    --color-surface-container-lowest: #FFFFFF;
+    --color-surface-container-low: #FCF4EE;
+    --color-surface-container: #F4E7DC;
+    --color-surface-container-high: #EEDDCE;
+    --color-surface-container-highest: #E7D3C3;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Theme Helper Classes */
+.theme-surface {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+.theme-container {
+  background-color: var(--color-surface-container);
+}
+.theme-container-high {
+  background-color: var(--color-surface-container-high);
+}
+.theme-border {
+  border-color: var(--color-outline-variant);
+}
+.theme-border-primary {
+  border-color: var(--color-primary);
+}
+.theme-text {
+  color: var(--color-on-surface);
+}
+.theme-text-muted {
+  color: var(--color-on-surface-variant);
+}
+.theme-text-primary {
+  color: var(--color-primary);
+}
+.theme-text-secondary {
+  color: var(--color-secondary);
+}
+.theme-btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary, #ffffff);
+}
+.theme-btn-primary:hover {
+  background-color: var(--color-primary-hover, var(--color-primary));
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant, rgba(136, 114, 116, 0.3));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline, rgba(136, 114, 116, 0.5));
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
